@@ -1,0 +1,159 @@
+---
+layout: default
+about:
+  summary: <p>  I have four years of experience as a software engineer at a startup in the Seattle area.
+                While this has helped round me into a profiecient full-stack developer, my strengths focus on building scalable backend systems.
+                I also have an interest in lucene-based search mechanisms and error reporting infrastructure.
+            </p>
+           <p>
+               I love building answers. Creating solutions to real, impactful problems that solve business and user need is a true passion for me. 
+            </p>
+  notables:
+    title: Things I've Done
+    left: 
+      - Designed and implemented a system to directly submit jobs to search engines. This enabled thousands of jobs to directly reach job seekers through Google.
+      - Designed and implemented an integration with Taleo Business Edition that facilitates processing external jobs and job applications. This filled an immediate need to support Taleo
+        for a pending partnership with a new customer, and supports future customers that leverage Taleo as an applicant tracking service.
+      - Implemented a new SEO system that increased monthly organic traffic by over 65,000 clicks.
+    right:
+      - Reworked site-wide log handling. This significantly reduced log wait times, dropped logs, and operating costs.
+        The structure of logs were also reworked to provide greater value for developers and analytics.
+      - Designed a suite of tools to help a marketing department prepare, organize, and track job postings to a popular job board.
+        This toolset empowered several full time employees to shift the majority of their work effort to more impactful endeavours.
+      - Implemented a new redesign for all site-wide search pages for job seekers. These pages are visited by over XXX visitors every day to find new jobs.
+
+interests:
+  summary: I like to spend time creating other things as well. Typically, it involves baking, barbecue or working on projects around the house.
+       For me, it is a great way to change gears and challenge myself in other areas. I also enjoy staying active at the gym and outdoors as well.
+  notables:
+    title: More About Me
+    left:
+      - I am an amateur photographer. You can find some of my photography on <a class="flickr" href="https://www.flickr.com/photos/michaelecollins">flickr!</a>
+      - I was the technical director for a small community theatre for several years in Arizona.
+    right:
+      - I was a hospice volunteer for over 6 years. I am immensely proud of this work and plan to continue it in the future.
+      - I was a registered EMT for 8 years.
+contact:
+  title: Find me
+seo:
+  type: person
+  links:
+    - https://www.linkedin.com/in/csmichaelcollins
+    - https://github.com/michaelecollins
+    - https://www.flickr.com/photos/michaelecollins
+---
+<section class="hero is-info is-bold is-medium">
+    <div class="hero-body">
+        <div class="has-text-centered">
+            <img src="/assets/images/portrait/portrait-256.png">
+            <h1 class="title">{{ site.me.name | escape }}</h1>
+            <h2 class="subtitle">{{ site.me.jobtitle | escape }}</h2>
+            <hr class="is-white" />
+            <h3 class="location">{{ site.me.location | escape }}</h3>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section is-medium">
+    <div class="container has-text-centered">
+        <div class="subsection">
+            <div class="summary">
+                {{ page.about.summary }}
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="header">
+                <h1 class="title">{{ page.about.notables.title }}</h1>
+                <hr />
+            </div>
+            <div class="content">
+                <div class="columns">
+                    <div class="column">
+                        <ul>
+                            {% for item in page.about.notables.left %}
+                                <li>{{item}}</li>                        
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                    <div class="vertical-divider is-hidden-mobile"></div>
+                    <div class="column">
+                        <ul>
+                            {% for item in page.about.notables.right %}
+                                <li>{{item}}</li>                        
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="interests" class="section is-medium has-text-white">
+    <div class="container has-text-centered">
+        <div class="subsection">
+            <div class="summary">
+                <p>
+                    {{ page.interests.summary }}
+                </p>
+            </div>
+        </div>        
+        <div class="subsection">
+            <div class="header">
+                <h1 class="title has-text-white">{{ page.interests.notables.title }}</h1>
+                <hr class="is-white"/>
+            </div>
+            <div class="content">
+                <div class="columns">
+                    <div class="column">
+                        <ul>
+                            {% for item in page.interests.notables.left %}
+                                <li>{{item}}</li>                        
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                    <div class="vertical-divider is-hidden-mobile"></div>
+                    <div class="column">
+                        <ul>
+                            {% for item in page.interests.notables.right %}
+                                <li>{{item}}</li>                        
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section is-medium">
+    <div class="container has-text-centered">
+        <div class="subsection">
+            <div class="header">
+                <h1 class="title">{{page.contact.title}}</h1>
+                <hr/>
+            </div>
+            <div class="content">
+                {%- assign social = site.social_links -%}
+                <div id="contact-links" class="column is-4 is-offset-4">
+                    <a href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}"
+                        title="{{ social.linkedin | escape }}">
+                        <div><i class="fab fa-linkedin fa-2x"></i></div>
+                        <div>{{ social.linkedin | escape }}</div>
+                    </a>
+                    <a href="https://github.com/{{ social.github | cgi_escape | escape }}"
+                        title="{{ social.github | escape }}">
+                        <div><i class="fab fa-github fa-2x"></i></div>
+                        <div>{{ social.github | escape }}</div>
+                    </a>                    
+                    <a href="https://www.flickr.com/photos/{{ social.flickr | cgi_escape | escape }}"
+                        title="{{ social.flickr | escape }}">
+                        <div><i class="fab fa-flickr fa-2x"></i></div>
+                        <div>{{ social.flickr | escape }}</div>
+                    </a>
+                </div>
+                {% include contact-form.html %}
+            </div>        
+        </div>
+    </div>
+</section>

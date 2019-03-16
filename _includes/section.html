@@ -1,0 +1,43 @@
+<section id="{{include.id}}"  class="section is-medium">
+    <div class="container has-text-centered">
+        <div class="subsection biography">
+
+            
+            <!-- <div class="header">
+                <h1 class="title">{{ page.who.title }}</h1>
+                <hr />
+            </div> -->  
+            <div class="content">
+                    {% include section.html var=page.who.about %}
+                <p>
+                    {{ page.who.about }}
+                </p>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="header">
+                <h1 class="title">{{ page.what.title }}</h1>
+                <hr />
+            </div>
+            <div class="content">
+                <div class="columns">
+                    <div class="column">
+                        <ul>
+                            {% for item in page.what.items.left %}
+                                <li>{{item}}</li>                        
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                    <div class="vertical-divider is-hidden-mobile"></div>
+                    <div class="column">
+                        <ul>
+                            {% for item in page.what.items.right %}
+                                <li>{{item}}</li>                        
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

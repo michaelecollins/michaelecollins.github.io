@@ -1,0 +1,21 @@
+title: Michael Collins
+description: >- 
+  Software Engineer in Seattle
+
+google_analytics: UA-135545669-1
+
+me:
+  name: Michael Collins
+  jobtitle: Full Stack Engineer
+  email: mike@michaelcollins.dev
+  location: Seattle, WA
+
+social_links:
+  github:  michaelecollins
+  linkedin: csmichaelcollins
+  flickr: michaelecollins
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
