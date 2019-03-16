@@ -1,36 +1,35 @@
 <footer class="footer">
-    <div class="level">
-        <span class="level-left copyright">
+    <div class="level is-hidden-mobile">
+        <div class="level-left copyright">
             <span class="level-item">
                 <i class="far fa-copyright"></i> {{ site.me.name | escape }} {{ 'now' | date: "%Y" }}
             </span>
-        </span>
+        </div>
 
         {%- assign social = site.social_links -%}
-        <span class="level-right social is-hidden-mobile">
-            <span class="level-item">
+        <div class="level-right social">
+            <span class="level-item links">
                 <a href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}"
-                    title="{{ social.linkedin | escape }}"><i class="fab fa-linkedin"></i></a>
+                    title="{{ social.linkedin | escape }}"><i class="fab fa-linkedin fa-lg"></i></a>
             </span>
             <span class="level-item">
                 <a href="https://github.com/{{ social.github | cgi_escape | escape }}"
-                    title="{{ social.github | escape }}"><i class="fab fa-github"></i></a>
+                    title="{{ social.github | escape }}"><i class="fab fa-github fa-lg"></i></a>
             </span>
             <span class="level-item">
                 <a href="https://www.flickr.com/photos/{{ social.flickr | cgi_escape | escape }}"
-                    title="{{ social.flickr | escape }}"><i class="fab fa-flickr"></i></a>
+                    title="{{ social.flickr | escape }}"><i class="fab fa-flickr fa-lg"></i></a>
             </span>
-        </span>
+        </div>
+    </div>
 
-        <span class="level-right social mobile is-hidden-tablet">
-            <span class="level-item">
-                <a href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}"
-                    title="{{ social.linkedin | escape }}"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/{{ social.github | cgi_escape | escape }}"
-                    title="{{ social.github | escape }}"><i class="fab fa-github"></i></a>
-                <a href="https://www.flickr.com/photos/{{ social.flickr | cgi_escape | escape }}"
-                    title="{{ social.flickr | escape }}"><i class="fab fa-flickr"></i></a>
+    <div class="level is-hidden-tablet">
+        <div class="social mobile is-hidden-tablet">            
+            <span class="copyright">
+                <span class="level-item">
+                    <i class="far fa-copyright"></i> {{ site.me.name | escape }} {{ 'now' | date: "%Y" }}
+                </span>
             </span>
-        </span>
+        </div>
     </div>
 </footer>

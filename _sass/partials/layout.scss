@@ -87,6 +87,8 @@ html, body {
                 #contact-links {
                     display: flex;
                     justify-content: space-evenly;
+                    margin-left: 25%;
+                    margin-right: 25%;
                     margin-bottom: $half-spaced;
 
                     a {
@@ -110,8 +112,11 @@ html, body {
     }
 
     .footer {
-        //
         padding: $tiny-spaced;
+
+        .level {
+            margin-bottom: 0;
+        }
 
         .copyright {
             i {
@@ -122,13 +127,6 @@ html, body {
         .social {
             .fab, .fas {
                 color: $black;
-                font-size: $quarter-spaced;
-            }
-    
-            &.mobile {
-                a:not(:last-child) {
-                    margin-right: $micro-spaced;
-                }
             }
         }
     }

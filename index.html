@@ -20,11 +20,9 @@ about:
         The structure of logs were also reworked to provide greater value for developers and analytics.
       - Designed a suite of tools to help a marketing department prepare, organize, and track job postings to a popular job board.
         This toolset empowered several full time employees to shift the majority of their work effort to more impactful endeavours.
-      - Implemented a new redesign for all site-wide search pages for job seekers. These pages are visited by over XXX visitors every day to find new jobs.
 
 interests:
-  summary: I like to spend time creating other things as well. Typically, it involves baking, barbecue or working on projects around the house.
-       For me, it is a great way to change gears and challenge myself in other areas. I also enjoy staying active at the gym and outdoors as well.
+  summary: I like to spend time creating other things as well. Typically, it involves baking, barbecue or working on projects around the house. I also enjoy staying active at the gym and outdoors as well.
   notables:
     title: More About Me
     left:
@@ -135,21 +133,24 @@ seo:
             </div>
             <div class="content">
                 {%- assign social = site.social_links -%}
-                <div id="contact-links" class="column is-4 is-offset-4">
+                <div id="contact-links" class="column">
                     <a href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}"
                         title="{{ social.linkedin | escape }}">
                         <div><i class="fab fa-linkedin fa-2x"></i></div>
-                        <div>{{ social.linkedin | escape }}</div>
+                        <div class="is-hidden-mobile">{{ social.linkedin | escape }}</div>
+                        <div class="is-hidden-tablet">linkedin</div>
                     </a>
                     <a href="https://github.com/{{ social.github | cgi_escape | escape }}"
                         title="{{ social.github | escape }}">
                         <div><i class="fab fa-github fa-2x"></i></div>
-                        <div>{{ social.github | escape }}</div>
+                        <div class="is-hidden-mobile">{{ social.github | escape }}</div>
+                        <div class="is-hidden-tablet">github</div>
                     </a>                    
                     <a href="https://www.flickr.com/photos/{{ social.flickr | cgi_escape | escape }}"
                         title="{{ social.flickr | escape }}">
                         <div><i class="fab fa-flickr fa-2x"></i></div>
-                        <div>{{ social.flickr | escape }}</div>
+                        <div class="is-hidden-mobile">{{ social.flickr | escape }}</div>
+                        <div class="is-hidden-tablet">flickr</div>
                     </a>
                 </div>
                 {% include contact-form.html %}
