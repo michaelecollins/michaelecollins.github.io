@@ -11,17 +11,6 @@
 
     {% include footer.html %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $(".navbar-burger").click(function () {
-                $(".navbar-burger").toggleClass("is-active");
-                $(".navbar-menu").toggleClass("is-active");
-            });
-        });
-    </script>
-
     {%- if jekyll.environment == 'production' and site.google_analytics -%}
         {%- include google-analytics.html -%}
     {%- endif -%}
